@@ -1,2 +1,2 @@
 # DevConnector
-Social platform for Developers which uses MERN Stack
+Social network for Developer
