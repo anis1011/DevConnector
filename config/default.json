@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://anis123:anis123@cluster0-bdfi3.mongodb.net/devconnector?retryWrites=true&w=majority"
+}
