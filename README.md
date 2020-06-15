@@ -1,2 +1,2 @@
 # DevConnector
-Social network for Developer
+Social network for developers
