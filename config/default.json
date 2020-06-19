@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://anis123:anis123@cluster0-bdfi3.mongodb.net/devconnector?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "9023e1d78ebe3daab621",
+  "githubSecret": "6cb0b4733cea45bb01d94d4b18fd4c3f1a5dcd88"
 }
