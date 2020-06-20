@@ -8,15 +8,15 @@ const config = require('config');
 const { check, validationResult } = require('express-validator/check');
 
 // @route   GET api/auth
-// @desc    Test route
-// @access  Public
+// @desc    Get current user
+// @access  Private
 router.get('/', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     res.json(user);
   } catch (error) {
     console.error(error.message);
-    res.status(500).send('Server error');
+    res.status(500).send('Server Error');
   }
 });
 
@@ -69,7 +69,7 @@ router.post(
       );
     } catch (error) {
       console.error(error.message);
-      res.status(500).send('Server error');
+      res.status(500).send('Server Error');
     }
   }
 );

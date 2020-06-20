@@ -8,7 +8,7 @@ const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
 // @route   GET api/profile/me
-// @desc    Get currenct users profile
+// @desc    Get current user profile
 // @access  Private
 router.get('/me', auth, async (req, res) => {
   try {
@@ -24,12 +24,12 @@ router.get('/me', auth, async (req, res) => {
     res.json(profile);
   } catch (error) {
     console.log(error.message);
-    res.status(500).send('Server error');
+    res.status(500).send('Server Error');
   }
 });
 
 // @route   POST api/profile
-// @desc    Create or update users profile
+// @desc    Create or update user profile
 // @access  Private
 router.post(
   '/',
@@ -96,15 +96,12 @@ router.post(
 
       // Create
       profile = new Profile(profileFields);
-
       await profile.save();
       res.json(profile);
     } catch (error) {
       console.error(error.message);
       res.status(500).send('Server Error');
     }
-
-    res.send('Hello');
   }
 );
 
@@ -227,9 +224,7 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
       .indexOf(req.params.exp_id);
 
     profile.experience.splice(removeIndex, 1);
-
     await profile.save();
-
     res.send(profile);
   } catch (error) {
     console.error(error.message);
@@ -328,7 +323,7 @@ router.get('/github/:username', async (req, res) => {
       }/repos?per_page=5&sort=created:asc&client_id=${config.get(
         'githubClientId'
       )}&client_secret=${config.get('githubSecret')}`,
-      methid: 'GET',
+      method: 'GET',
       headers: { 'user-agent': 'node.js' },
     };
 
